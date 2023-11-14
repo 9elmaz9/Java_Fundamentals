@@ -1,19 +1,32 @@
 package GameNight;
 
 public class Question {
+    // atributes
+    private String text;
+    Answer[] answers;
+    private int correctAnswerIndex;
 
-     private  String text ;
+    //Methods
 
-
+    Question(String text, Answer[] answers, int correctAnswerIndex) {
+        this.text = text;
+        this.answers = answers;
+        this.correctAnswerIndex = correctAnswerIndex;
+    }
 
     public String getQuestionText() {
         return text;
     }
 
-    public String getAnswerText() {
-        return null;
+    public Answer[] getAnswer() {
+        return answers;
     }
 
-    public Answer[] getAnswer() {
+    Answer getCorrectAnswerIndex() {
+        return answers[correctAnswerIndex];
+    }
+    boolean checkAnswer(int answerIndex){
+        return answerIndex==correctAnswerIndex;
     }
 }
+
