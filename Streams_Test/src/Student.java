@@ -1,9 +1,11 @@
 public class Student extends Person {
-//propertiees
+    //propertiees
     public int id;
     private static int incrementld;
 
-    public Student() { // constructor
+
+    // constructor
+    public Student() {
     }
 
 

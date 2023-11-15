@@ -1,9 +1,12 @@
+import java.util.ArrayList;
+
 public class ScoreInfo {
     //properties
     int score ;
-    String student;
+    ArrayList<Student> student;
 
-    public ScoreInfo(int score, Student student) { // constructor
+
+    public ScoreInfo(int score, ArrayList<Student> student) {
         this.score = score;
         this.student = student;
     }
