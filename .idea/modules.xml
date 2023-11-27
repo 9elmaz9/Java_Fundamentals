@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HOME/DraftGame/AdvetrureGame/AdvetrureGame.iml" filepath="$PROJECT_DIR$/HOME/DraftGame/AdvetrureGame/AdvetrureGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter01_BasicProgramming/Chapter01_BasicProgramming.iml" filepath="$PROJECT_DIR$/Chapter01_BasicProgramming/Chapter01_BasicProgramming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter02_OOP/Chapter02_OOP.iml" filepath="$PROJECT_DIR$/Chapter02_OOP/Chapter02_OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter03_Classes/Chapter03_Classes.iml" filepath="$PROJECT_DIR$/Chapter03_Classes/Chapter03_Classes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter04_ArraysEnEnums/Chapter04_ArraysEnEnums.iml" filepath="$PROJECT_DIR$/Chapter04_ArraysEnEnums/Chapter04_ArraysEnEnums.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter05_Inheritance/Chapter05_Inheritance.iml" filepath="$PROJECT_DIR$/Chapter05_Inheritance/Chapter05_Inheritance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter06_Polymorphism/Chapter06_Polymorphism.iml" filepath="$PROJECT_DIR$/Chapter06_Polymorphism/Chapter06_Polymorphism.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter07_Abstract/Chapter07_Abstract.iml" filepath="$PROJECT_DIR$/Chapter07_Abstract/Chapter07_Abstract.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter08_Interfaces/Chapter08_Interfaces.iml" filepath="$PROJECT_DIR$/Chapter08_Interfaces/Chapter08_Interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter09_NestedKlassen/Chapter09_NestedKlassen.iml" filepath="$PROJECT_DIR$/Chapter09_NestedKlassen/Chapter09_NestedKlassen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter10_Lambdas/Chapter10_Lambdas.iml" filepath="$PROJECT_DIR$/Chapter10_Lambdas/Chapter10_Lambdas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter11_Streams/Chapter11_Streams.iml" filepath="$PROJECT_DIR$/Chapter11_Streams/Chapter11_Streams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter12_Generic/Chapter12_Generic.iml" filepath="$PROJECT_DIR$/Chapter12_Generic/Chapter12_Generic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter13_Collections/Chapter13_Collections.iml" filepath="$PROJECT_DIR$/Chapter13_Collections/Chapter13_Collections.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Chapter10_Lambdas/Chapter_12Generetics/Chapter_12Generetics.iml" filepath="$PROJECT_DIR$/Chapter10_Lambdas/Chapter_12Generetics/Chapter_12Generetics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HOME/DraftGame/DraftGame.iml" filepath="$PROJECT_DIR$/HOME/DraftGame/DraftGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ErvaringsWeek/ErvaringsWeek.iml" filepath="$PROJECT_DIR$/ErvaringsWeek/ErvaringsWeek.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HOME/HOME.iml" filepath="$PROJECT_DIR$/HOME/HOME.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HOME/ICECREAMSHOP/ICECREAMSHOP.iml" filepath="$PROJECT_DIR$/HOME/ICECREAMSHOP/ICECREAMSHOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java_Fundamentals.iml" filepath="$PROJECT_DIR$/Java_Fundamentals.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HOME/DraftGame/Play/PlayWERK.iml" filepath="$PROJECT_DIR$/HOME/DraftGame/Play/PlayWERK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HOME/DraftGame/Quiz/QuizNotWerk.iml" filepath="$PROJECT_DIR$/HOME/DraftGame/Quiz/QuizNotWerk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Streams_Test/Streams_Test.iml" filepath="$PROJECT_DIR$/Streams_Test/Streams_Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestLambdasStreams/TestLambdasStreams.iml" filepath="$PROJECT_DIR$/TestLambdasStreams/TestLambdasStreams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HOME/VICTORINA/VICTORINA- werkPlay.iml" filepath="$PROJECT_DIR$/HOME/VICTORINA/VICTORINA- werkPlay.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Project3/WhyPhone.iml" filepath="$PROJECT_DIR$/Project3/WhyPhone.iml" />
+    </modules>
+  </component>
+</project>
