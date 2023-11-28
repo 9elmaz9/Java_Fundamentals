@@ -16,7 +16,7 @@ public class Oefeninf2 {
             int number = random.nextInt(100);
 
 
-            ListNumbers=
+           // ListNumbers=
          // Arrays.sort(new ArrayList[]{numbersList});
          // for (int j = numbersList.lastIndexOf(-1); j >10 ; --j) {
 
