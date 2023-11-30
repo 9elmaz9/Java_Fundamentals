@@ -1,8 +1,8 @@
 package Project1;
 
 public class Product {
-      String name;
-     final int productId;
+    String name;
+    final int productId;
 
     public Product(String name, int productId) {
         this.name = name;

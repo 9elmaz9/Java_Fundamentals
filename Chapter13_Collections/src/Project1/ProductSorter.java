@@ -8,7 +8,7 @@ public class ProductSorter {
 
 
     List<Product> products = new ArrayList<>();
-    List<FoodProduct> foodProducts = new ArrayList<>();
+    List<FoodProduct> foodProducts = new ArrayList<FoodProduct>();
     List<HealthProduct>  healthProducts= new ArrayList<>();
     List<ElectricProduct> electricProducts = new ArrayList<>();
 
@@ -32,5 +32,7 @@ public class ProductSorter {
     public List<Product> sortProduct(Product product){
         return products;
     }
+
+
 
 }
