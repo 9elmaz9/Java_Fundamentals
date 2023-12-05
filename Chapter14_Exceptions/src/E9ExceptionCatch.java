@@ -8,7 +8,6 @@ public class E9ExceptionCatch {
             int result = 5/0 ;
             System.out.println(result);
         }catch (ArithmeticException | NumberFormatException anException){
-
             System.out.println(anException.getMessage());
         }
     }
