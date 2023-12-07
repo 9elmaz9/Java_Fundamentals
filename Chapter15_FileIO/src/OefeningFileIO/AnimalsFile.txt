@@ -1,0 +1,1 @@
+Horse{name='Star', food=false}The horse is my favourite animal.Horse{name='Star', food=false}They are intelligent,friendly,understanding ,trustworthy and beautifulHorse{name='Star', food=false}Horses are magnificient animals domesticated by humankind for thousands of years.
