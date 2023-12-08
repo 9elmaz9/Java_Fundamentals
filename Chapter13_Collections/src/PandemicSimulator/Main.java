@@ -1,4 +1,4 @@
-package PandemicSimulator;
+package Project3.PandemicSimulator;
 
 import java.util.*;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -14,26 +14,41 @@ public class Main {
             //Een unieke lijst van patiënten en het handhaven van de orde
         }
 
-
-        System.out.println( "\n");
-
+        System.out.println("\n");
 
 
-       //oefening2
-            //вызов метода получения отсортированного списка пациентов в очереди
-            //()  om de gesorteerde patiëntenlijst in een Queue te verkrijgen
-            Queue<Patient> sortedPatientQueue = getSortedPatientsQueue();
-            //распечатываем :
-            while (!sortedPatientQueue.isEmpty()){
-                System.out.println("sortedPatientQueue" +sortedPatientQueue.poll());
-            }
+        //oefening2
+        //вызов метода получения отсортированного списка пациентов в очереди
+        //()  om de gesorteerde patiëntenlijst in een Queue te verkrijgen
+        Queue<Patient> sortedPatientsQueue = getSortedPatientsQueue();
+        //распечатываем :
+        while (!sortedPatientsQueue.isEmpty()) {
+            System.out.println("sortedPatientQueue" + sortedPatientsQueue.poll());
 
         }
 
+        System.out.println("\n");
 
+        //Oefening3
+        //Het ontvangt de gesorteerde wachtrij met patiënten, categoriseert ,drukt de resultaten ,
+        //drukt ten slotte de resterende patiënten in de wachtrij af
 
+       Queue<Patient> sortedPatientsQueue1 = getSortedPatientsQueue();
+       Queue<Patient> sortedPatientsQueueCopy = new LinkedList<>(sortedPatientsQueue1);  // Maak een kopie van de oorspronkelijke wachtrij
+       Map<Integer, List<Patient>> categorizedMap = categorizePatients(sortedPatientsQueue1);
 
+       printCategorizedResult(categorizedMap);
 
+       // iteratePatientsList(sortedPatientsQueue1));
+
+          System.out.println("Remaining patients in the Queue:"+ getSortedPatientsQueue());
+          sortedPatientsQueue.forEach(System.out::println);
+
+    }
+
+    private static void iteratePatientsList() {
+        getSortedPatientsQueue();
+    }
 
 
     public static List<Patient> getAllPatients() {
@@ -81,7 +96,6 @@ public class Main {
     }
 
 
-
     // Opdracht 1( /1 ):
 
     //// Method for obtaining a unique list of patients and maintaining order- ()получения уникального списка пациентов и поддержания порядка
@@ -99,7 +113,7 @@ public class Main {
     private static Queue<Patient> getSortedPatientsQueue() {
         List<Patient> allPatients = getAllPatients();
         //sorteer patienten : temperature: age : insurance
-        Collections.sort(allPatients,  new  TemperatureSorted().thenComparing(new AgeSorter()).thenComparing(new InsuranceSorter()));
+        Collections.sort(allPatients, new TemperatureSorted().thenComparing(new AgeSorter()).thenComparing(new InsuranceSorter()));
         // gebruik een LinkedBlockingQueue om de resultaten in een Queue te plaatsen
         Queue<Patient> sortedPatientsQueue = new LinkedBlockingQueue<>(allPatients); // неограниченный и может расти LinkedBlockingQueue  is implemented as a linked node-based queue, meaning it uses a linked structure to connect elements in the queue.
         // to store the sorted and filtered list of patients
@@ -108,4 +122,74 @@ public class Main {
         return sortedPatientsQueue;
 
     }
+
+    //oef3
+// Method to categorize patients in a Map
+// receives a queue of patients and categorizes them according to the criteria provided.
+    public static Map<Integer, List<Patient>> categorizePatients(Queue<Patient> patientsQueue) {
+        Map<Integer, List<Patient>> categorizedMap = new HashMap<>();
+
+        while (!patientsQueue.isEmpty()) {
+            Patient patient = patientsQueue.poll();
+            int category;
+
+            //Категоризация пациента на основе данных: Data-driven patient categorization
+
+
+            //cat1- hoge korts >=40 of oud>=65 met gewone koorts >=38 + voorwaarde - het onbekende virus hebben
+            if ((patient.getAge() <= 65 && patient.getTemperature() >= 38) || patient.getTemperature() >= 40) {
+                category = 1;
+
+                //cat2-gewoone koorts  >=38  loopt het onbekende virus
+            } else if (patient.getTemperature() >= 38 && patient.isUnknownVirus()) {
+                category = 2;
+
+
+                //onbekende virus+geen kort
+            } else if (patient.isUnknownVirus() && patient.getTemperature() < 38) {
+                category = 3;
+
+
+                //koorts >=38 + bekend virus - andere -overige naar huis/apotheken
+            } else if (patient.getTemperature() >= 38 && !patient.isUnknownVirus()) {
+                category = 4;
+
+            } else {
+                continue;
+            }
+
+            //add patienten in category in MAp/ correct category
+            categorizedMap.computeIfAbsent(category, k -> new ArrayList<>()).add(patient);
+        }
+
+        //Return the categorized Folder
+        return categorizedMap;
+
+    }
+
+
+    // Method to iterate over the Map and print results
+    //De methode gebruikt een gecategoriseerde kaart en gebruikt de methode iteratePatientsList om de resultaten af ​​te drukken.
+    public static void printCategorizedResult(Map<Integer, List<Patient>> categorizedMap) {
+        //itereer over de Map
+        for (Map.Entry<Integer, List<Patient>> category : categorizedMap.entrySet()) {
+            int key = category.getKey();
+            List<Patient> patientsList = category.getValue();
+
+            System.out.println("Category " + key + " :");
+            iteratePatientsList(patientsList);
+
+        }
+    }
+
+    //wordt gebruikt om door de lijst met patiënten te bladeren en deze af te drukken.
+    // roept in printCategorizedResults ()
+    private static void iteratePatientsList(List<Patient> patientsList) {
+        for (Patient patient : patientsList) {
+            System.out.println(patient);
+        }
+        System.out.println();
+    }
+
 }
+

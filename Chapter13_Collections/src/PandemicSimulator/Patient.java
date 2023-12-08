@@ -1,4 +1,4 @@
-package PandemicSimulator;
+package Project3.PandemicSimulator;
 
 import java.util.*;
 
@@ -94,5 +94,52 @@ public class Patient {
                 '}';
     }
 
+
+    public boolean isUnknownVirus() {
+        return  false;
     }
+
+    // Method to categorize patients in a Map
+    // receives a queue of patients and categorizes them according to the criteria provided.
+    public static Map<Integer, List<Patient>> categorizePatients(Queue<Patient> patientsQueue) {
+        Map<Integer, List<Patient>> categorizeMap = new HashMap<>();
+
+        while (!patientsQueue.isEmpty()) {
+            Patient patient = patientsQueue.poll();
+            int category;
+
+            //Категоризация пациента на основе данных: Data-driven patient categorization
+
+
+            //cat1- hoge korts >=40 of oud>=65 met gewone koorts >=38 + voorwaarde - het onbekende virus hebben
+            if ((patient.getAge() <= 65 && patient.getTemperature() >= 38) || patient.getTemperature() >= 40) {
+                category = 1;
+
+                //cat2-gewoone koorts  >=38  loopt het onbekende virus
+            } else if (patient.getTemperature() >= 38 && patient.isUnknownVirus()) {
+                category = 2;
+
+
+                //onbekende virus+geen kort
+            } else if (patient.isUnknownVirus() && patient.getTemperature() < 38) {
+                category = 3;
+
+
+                //koorts >=38 + bekend virus - andere -overige naar huis/apotheken
+            } else if (patient.getTemperature() >= 38 && !patient.isUnknownVirus()) {
+                category = 4;
+
+            } else {
+                continue;
+            }
+
+            //add patienten in category in MAp/ correct category
+            categorizeMap.computeIfAbsent(category, k -> new ArrayList<>()).add(patient);
+        }
+
+        //Return the categorized Folder
+        return categorizeMap;
+
+    }
+}
 
