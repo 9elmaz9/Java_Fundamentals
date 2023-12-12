@@ -10,7 +10,7 @@ public class Oefening1 {
         int countdownSeconds = 10;
         LocalDateTime now = LocalDateTime.now();
         for (int i = countdownSeconds; i >0; i--) {
-            countdownSeconds --; // voor loop 10 - 9 - 8 -7 ... ect
+           // countdownSeconds --; // voor loop 10 - 9 - 8 -7 ... ect
             System.out.println("Tijd :" + now+ "|Aftellen :" + +i);
             try {
                 Thread.sleep(10000);
