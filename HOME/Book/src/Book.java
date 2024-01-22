@@ -9,7 +9,6 @@ public class Book {
     private LocalDate releaseDate;
     private String genre;
 
-
     //constructor - parameter- ontvangende
     public Book(String title, Person author, LocalDate releaseDate, String genre) {
         this.title = title;
@@ -35,7 +34,6 @@ public class Book {
     }
 
     //"   \"" + text + "\"");
-
 
     @Override
     public String toString() {
