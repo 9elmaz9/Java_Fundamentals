@@ -34,11 +34,13 @@ public class AdventureScenario extends AdventureStep {
         
         if (userChoise == 1) {
             System.out.println("You decide to continue following the footsteps on the beach.");
+            
             // Check if there is a next step towards cannibals // Проверка, есть ли следующий шаг в направлении к людоедам
             
             if (choiceToCannibals == null) {
                 
                 System.out.println("But the journey is over. The cannibals surrounded you. End of the adventure.");
+                
                 return null; // Return null to end the adventure // Возвращаем null, чтобы завершить приключение
             } else {
                 return choiceToCannibals; // Return the next step towards cannibals // Возвращаем следующий шаг в направлении к людоедам
@@ -48,8 +50,11 @@ public class AdventureScenario extends AdventureStep {
             System.out.println("You decide to change your path.");
 
 // Проверка, есть ли следующий шаг в направлении к спасению// Checking if there is a next step towards salvation
+            
             if (choiseToRescue == null) {
+                
                 System.out.println("However, you find no salvation. You are surrounded by cannibals and your adventure is over.");
+                
                 return null;// Return null to end the adventure // Возвращаем null, чтобы завершить приключение
             } else {
                 return choiseToRescue; // Return the next step towards salvation// Возвращаем следующий шаг в направлении к спасению
