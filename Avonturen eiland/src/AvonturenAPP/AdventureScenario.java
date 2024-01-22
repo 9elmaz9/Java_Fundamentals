@@ -9,6 +9,7 @@ public class AdventureScenario extends AdventureStep {
     //constructor
     public AdventureScenario(String description) {
         super(description); //зовем из супер класса- Описание текущего шага.
+    
         //call from the super class - Description of the current step.
     }
 
@@ -24,7 +25,9 @@ public class AdventureScenario extends AdventureStep {
 
 
         int userChoise; //Variable to store the user's choice
+        
         // Цикл для обеспечения правильного выбора пользователя (1 или 2)
+        
         do {// Loop to ensure user selects correctly (1 or 2
             System.out.println("Select an action (1-2): ");
             userChoise = scanner.nextInt();
