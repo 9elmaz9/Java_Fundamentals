@@ -95,3 +95,32 @@ public class BookApp {
     }
 
     }
+
+
+//This Java code represents a simple application, BookApp, that works with an array of Book objects and performs various operations using Java streams. Here's a breakdown of the code:
+
+Book Class:
+
+The Book class has attributes like title, author, release date, and genre.
+There is also a Person class representing the author, with attributes such as first name, last name, and date of birth.
+The Book class has a constructor to create book objects.
+BookApp Class:
+
+The BookApp class contains the main method, which is the entry point of the application.
+A static method createBooksArray is defined to create an array of Book objects with sample data.
+The application performs the following operations using Java streams:
+Get Newest Book:
+Uses the max function with a comparator based on release date to find the newest book.
+Print Youngest Writer:
+Uses the max function with a comparator based on the author's date of birth to find the youngest writer.
+Print Books Sorted by Title:
+Uses the sorted function with a comparator based on the book title to print books in alphabetical order.
+Count Books per Author:
+Uses the groupingBy collector to group books by author and the counting collector to count the number of books per author.
+Print Books Released in 2016:
+Uses the filter function to select books released in the year 2016 and prints them.
+Note:
+
+The :: reference operator is used in the method references, making the code concise.
+Java streams are employed to perform operations on the array of books in a functional programming style.
+Overall, the BookApp class demonstrates the use of Java streams for processing a collection of books and extracting specific information, such as the newest book, youngest writer, sorted book list, book count per author, and books released in a particular year.
