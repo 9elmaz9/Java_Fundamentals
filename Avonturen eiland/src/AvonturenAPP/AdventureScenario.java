@@ -29,11 +29,15 @@ public class AdventureScenario extends AdventureStep {
             System.out.println("Select an action (1-2): ");
             userChoise = scanner.nextInt();
         } while (userChoise != 1 && userChoise != 2);
+        
 // Check the user's selection and take appropriate action// Проверка выбора пользователя и выполнение соответствующих действий
+        
         if (userChoise == 1) {
             System.out.println("You decide to continue following the footsteps on the beach.");
             // Check if there is a next step towards cannibals // Проверка, есть ли следующий шаг в направлении к людоедам
+            
             if (choiceToCannibals == null) {
+                
                 System.out.println("But the journey is over. The cannibals surrounded you. End of the adventure.");
                 return null; // Return null to end the adventure // Возвращаем null, чтобы завершить приключение
             } else {
