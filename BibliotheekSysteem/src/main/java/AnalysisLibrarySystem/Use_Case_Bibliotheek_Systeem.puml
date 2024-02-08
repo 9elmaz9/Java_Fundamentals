@@ -1,0 +1,229 @@
+@startuml
+left to right direction
+
+package "Library System" {
+  rectangle "User" as user {
+   :user1:
+  }
+  rectangle "Userscases" as usecases {
+    (Search Book) as search
+    (Back Book) as back
+    (Loan Book) as loen
+    (Loggin) as userloggin
+    (Subscribtion) as (subscribtion)
+
+  }
+  user ---> (search)
+  user --->(back)
+  user ---> (loen)
+  user ---> (userloggin)
+  user ---> (subscribtion)
+
+  rectangle "CostomerService" as customerservice {
+      :customerservice1:
+    }
+
+    rectangle "Userscases" as usecases {
+
+      (Edite Book Information) as (editebookinformation)
+      (Add Book) as addbook
+      (Delete Book) as deletebook
+
+
+    }
+
+    customerservice ---> (userloggin)
+    customerservice ---> (editebookinformation)
+    customerservice ---> (addbook)
+    customerservice --->  (deletebook)
+
+
+rectangle "LibraryService" as libraryservice {
+    :systemservice:
+  }
+
+  rectangle "Userscases" as usecases {
+
+    (Book Manage) as (bookmanage)
+    (User Manage) as (usermanage)
+     (Registration) as (registration)
+     (Library Functionality) as (libraryfunctionality)
+
+
+  }
+  libraryservice ---> (registration)
+
+  libraryservice ---> (bookmanage)
+  libraryservice ---> (usermanage)
+  libraryservice ---> (libraryfunctionality)
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@startuml
+left to right direction
+
+package "Bibliotheeksysteem" {
+  rectangle "Gebruiker" as gebruiker {
+    :user:
+  }
+
+rectangle "Gebruikscases" as usecases {
+    (Boek Zoeken) as zoek
+    (Boek terugkrijgen) as terugkrijgen
+    (Boek Lening) as lening
+    (Inloggen) as gebruikerInloggen
+    (Abbonement) as (abbonment)
+
+  }
+
+  gebruiker ---> (zoek)
+  gebruiker --->(terugkrijgen)
+  gebruiker ---> (lening)
+  gebruiker ---> (gebruikerInloggen)
+  gebruiker ---> (abbonment)
+
+rectangle "Klantenservice" as klantenservice {
+      :klantenservice1:
+    }
+
+rectangle "Gebruikscases" as usecases {
+
+(Boek Informatie Bewerken) as boekinformatiebewerken
+(Boek Toevoegen) as toevoegen
+(Boek verdewijnen) as verdewijnen
+ }
+
+klantenservice ---> (gebruikerInloggen)
+klantenservice ---> (boekinformatiebewerken)
+klantenservice ---> (toevoegen)
+klantenservice --->  (verdewijnen)
+
+
+rectangle "Bibliotheekservice" as bibliotheekservice {
+    :service:
+  }
+
+rectangle "Gebruikscases" as usecases {
+
+(Boek beheren) as (boekbeheren)
+(Gebruikers Beheren) as (gebruikerbeheren)
+(Registratie) as (registratie)
+(Bibliotheek Functionaliteit) as (functionaliteit)
+  }
+
+bibliotheekservice ---> (registratie)
+
+bibliotheekservice ---> (boekbeheren)
+bibliotheekservice ---> (gebruikerbeheren)
+bibliotheekservice ---> (functionaliteit)
+
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+@startuml
+left to right direction
+
+package "Library System" {
+  rectangle "User" as user {
+    :user:
+  }
+
+  rectangle "Use Cases" as usecases {
+    (Search Book) as search
+    (Retrieve Book) as retrieve
+    (Loan Book) as loan
+    (Login) as userLogin
+    (Subscription) as subscription
+  }
+
+  user ---> search
+  user ---> retrieve
+  user ---> loan
+  user ---> userLogin
+  user ---> subscription
+
+  rectangle "Customer Service" as customerService {
+    :customer service:
+  }
+
+  rectangle "Use Cases" as customerUseCases {
+    (Edit Book Information) as editBookInformation
+    (Add Book) as addBook
+    (Remove Book) as removeBook
+  }
+
+  customerService ---> userLogin
+  customerService ---> editBookInformation
+  customerService ---> addBook
+  customerService ---> removeBook
+
+  rectangle "Library Service" as libraryService {
+    :service:
+  }
+
+  rectangle "Use Cases" as libraryUseCases {
+    (Manage Book) as manageBook
+    (Manage Users) as manageUsers
+    (Registration) as registration
+    (Library Functionality) as libraryFunctionality
+  }
+
+  libraryService ---> registration
+  libraryService ---> manageBook
+  libraryService ---> manageUsers
+  libraryService ---> libraryFunctionality
+}
+
+@enduml

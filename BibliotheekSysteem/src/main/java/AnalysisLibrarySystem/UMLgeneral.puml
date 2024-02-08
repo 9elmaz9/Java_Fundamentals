@@ -1,0 +1,75 @@
+@startuml
+left to right direction
+
+package "Library System" {
+    interface DataService {
+        + searchBook(title: String): Book
+        + borrowBook(book: Book): boolean
+        + returnBook(book: Book): boolean
+        + addUser(user: User): boolean
+        + removeUser(user: User): boolean
+        + addBook(book: Book): boolean
+        + removeBook(book: Book): boolean
+    }
+
+    class DataBase {
+        - users: List<User>
+        - books: List<Book>
+        + addUser(user: User): boolean
+        + removeUser(user: User): boolean
+        + addBook(book: Book): boolean
+        + removeBook(book: Book): boolean
+        + getUserByUsername(username: String): User
+        + getBookByTitle(title: String): Book
+    }
+
+    class User {
+        - username: String
+        - password: String
+        + login(username: String, password: String): boolean
+        + getUsername(): String
+        + searchBook(title: String): Book
+        + borrowBook(book: Book): boolean
+        + returnBook(book: Book): boolean
+        + subscribe(): boolean
+    }
+
+    class Book {
+        - title: String
+        - author: String
+        - availability: boolean
+        + getTitle(): String
+        + getAuthor(): String
+        + isAvailable(): boolean
+        + setAvailable(availability: boolean): void
+    }
+
+    class CustomerService {
+        + login(username: String, password: String): boolean
+        + editBookInformation(book: Book): boolean
+        + addBook(book: Book): boolean
+        + deleteBook(book: Book): boolean
+    }
+
+    class LibraryService {
+        + login(username: String, password: String): boolean
+        + manageBook(book: Book): boolean
+        + manageUser(user: User): boolean
+        + registerUser(user: User): boolean
+    }
+
+    class MainApp {
+        + main(args: String[]): void
+    }
+
+    User --> DataService: "searchBook"
+    User --> DataService: "borrowBook"
+    User --> DataService: "returnBook"
+    CustomerService --> DataService: "addBook"
+    CustomerService --> DataService: "removeBook"
+    LibraryService --> DataService: "addUser"
+    LibraryService --> DataService: "removeUser"
+    LibraryService --> DataService: "addBook"
+    LibraryService --> DataService: "removeBook"
+}
+@enduml

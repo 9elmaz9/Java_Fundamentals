@@ -1,0 +1,164 @@
+[09:54] Nina Charles
+@startuml
+package "Library System" {
+    package "User" {
+        class User {
+            - username: String
+            - password: String
+            - email: String
+            - subscriptionStatus: boolean
+            + login(username: String, password: String): boolean
+            + searchBook(title: String): Book
+            + borrowBook(book: Book): void
+            + returnBook(book: Book): void
+            + viewAccount(): Account
+            + subscribeToNewsletter(email: String): void
+            + paySubscriptionFee(): void
+            + payFineForDamagedBook(): void
+            + payFineForLostBook(): void
+        }
+
+        class Account {
+            - username: String
+            - password: String
+            - email: String
+            - subscriptionStatus: boolean
+            + viewAccount(): Account
+            + subscribeToNewsletter(email: String): void
+            + paySubscriptionFee(): void
+            + payFineForDamagedBook(): void
+            + payFineForLostBook(): void
+        }
+    }
+
+    package "Customer Service" {
+        class Administrator {
+            - username: String
+            - password: String
+            + login(username: String, password: String): boolean
+            + editBookInformation(title: String, author: String): void
+            + addBook(title: String, author: String): void
+            + deleteBook(title: String, author: String): void
+        }
+    }
+
+    package "Library Service" {
+        interface LibraryService {
+            + addBook(title: String, author: String): void
+            + editBookInformation(title: String, author: String): void
+            + deleteBook(title: String, author: String): void
+        }
+
+        class SystemService implements LibraryService {
+            + addBook(title: String, author: String): void
+            + editBookInformation(title: String, author: String): void
+            + deleteBook(title: String, author: String): void
+        }
+    }
+
+    package "Use Cases" {
+        class SearchBook {
+            + search(title: String): Book[]
+        }
+
+        class BackBook {
+            + backBook(book: Book): void
+        }
+
+        class LoanBook {
+            + loanBook(book: Book): void
+        }
+
+        class UserLogin {
+            + login(username: String, password: String): boolean
+        }
+
+        class Subscription {
+            + subscribe(): void
+        }
+
+        class EditBookInformation {
+            + editBookInformation(title: String, author: String): void
+        }
+
+        class AddBook {
+            + addBook(title: String, author: String): void
+        }
+
+        class DeleteBook {
+            + deleteBook(title: String, author: String): void
+        }
+
+        class BookManage {
+            + moveBook(book: Book, category: String): void
+            + restoreBook(book: Book): void
+            + markBook(book: Book): void
+            + calculatePopularity(): Map<Book, Integer>
+        }
+
+        class UserManage {
+            + enrollUser(user: User): void
+            + removeUser(user: User): void
+            + blockUser(user: User): void
+            + freezeSubscription(user: User): void
+            + resetPassword(user: User): void
+        }
+
+        class Registration {
+            + register(username: String, password: String): boolean
+        }
+
+        class LibraryFunctionality {
+            + searchBook(title: String): Book
+            + borrowBook(book: Book): void
+            + returnBook(book: Book): void
+            + viewAccount(): Account
+            + viewLibraryStatistics(): Statistics
+            + rateBook(book: Book, rating: int): void
+            + subscribeToNewsletter(email: String): void
+            + paySubscriptionFee(user: User): void
+            + payFineForDamagedBook(user: User): void
+            + payFineForLostBook(user: User): void
+            + sortBooks(criteria: String): Book[]
+            + sortClientsByAge(): User[]
+        }
+    }
+
+    package "MainApp" {
+        class MainApp {
+            + main(args: String[]): void
+        }
+    }
+
+    class Book {
+        - title: String
+        - author: String
+    }
+
+    class Statistics {
+        - totalBooks: int
+        - totalUsers: int
+        - mostPopularBooks: Book[]
+    }
+
+    User --> UserLogin
+    User --> SearchBook
+    User --> BackBook
+    User --> LoanBook
+    User --> Subscription
+    User --> Account
+
+    Administrator --> UserLogin
+    Administrator --> EditBookInformation
+    Administrator --> AddBook
+    Administrator --> DeleteBook
+
+    SystemService --> BookManage
+    SystemService --> UserManage
+    SystemService --> LibraryFunctionality
+
+    MainApp --> User
+    MainApp --> Administrator
+    MainApp --> SystemService
+}
+@enduml

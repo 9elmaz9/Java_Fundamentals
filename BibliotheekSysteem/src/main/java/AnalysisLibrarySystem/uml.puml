@@ -1,0 +1,399 @@
+
+@startuml
+!define USER_INTERFACE interface
+
+class User {
+  -username: String
+  -password: String
+  +User(username: String, password: String)
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class Book {
+  -title: String
+  -author: String
+  -category: String
+  -status: String
+  +Book(title: String, author: String, category: String)
+}
+
+class LibrarySystem {
+  -users: List<User>
+  -books: List<Book>
+  -database: Database
+  +LibrarySystem(database: Database)
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+class Database {
+  -userTable: List<User>
+  -bookTable: List<Book>
+  +Database()
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+class MainApp {
+  +main(): void
+}
+
+USER_INTERFACE User {
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+USER_INTERFACE LibrarySystem {
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+USER_INTERFACE Database {
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+@enduml
+
+
+
+
+@startuml
+!define USER_INTERFACE interface
+
+class User {
+  -username: String
+  -password: String
+  +User(username: String, password: String)
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class Book {
+  -title: String
+  -author: String
+  -category: String
+  -status: String
+  +Book(title: String, author: String, category: String)
+}
+
+class LibrarySystem {
+  -users: List<User>
+  -books: List<Book>
+  -database: Database
+  +LibrarySystem(database: Database)
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+class Database {
+  -userTable: List<User>
+  -bookTable: List<Book>
+  +Database()
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+class MainApp {
+  +main(): void
+}
+
+USER_INTERFACE User {
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+USER_INTERFACE LibrarySystem {
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+USER_INTERFACE Database {
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+note right of MainApp
+  This class contains the main method.
+end note
+@enduml
+
+
+
+
+@startuml
+
+!define USER_INTERFACE interface
+
+class User {
+  -username: String
+  -password: String
+  +User(username: String, password: String)
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class Book {
+  -title: String
+  -author: String
+  -category: String
+  -status: String
+  +Book(title: String, author: String, category: String)
+}
+
+class LibrarySystem {
+  -users: List<User>
+  -books: List<Book>
+  -database: Database
+  +LibrarySystem(database: Database)
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+class Database {
+  -userTable: List<User>
+  -bookTable: List<Book>
+  +Database()
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+USER_INTERFACE User {
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+USER_INTERFACE LibrarySystem {
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+USER_INTERFACE Database {
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+class MainApp {
+  +main(): void
+}
+
+note right of MainApp
+  This class contains the main method.
+end note
+
+@enduml
+
+
+
+
+@startuml
+
+class User {
+  -username: String
+  -password: String
+  +User(username: String, password: String)
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class Book {
+  -title: String
+  -author: String
+  -category: String
+  -status: String
+  +Book(title: String, author: String, category: String)
+}
+
+class LibrarySystem {
+  -users: List<User>
+  -books: List<Book>
+  -database: Database
+  +LibrarySystem(database: Database)
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+class Database {
+  -userTable: List<User>
+  -bookTable: List<Book>
+  +Database()
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+class MainApp {
+  +main(): void
+}
+
+note right of MainApp
+  This class contains the main method.
+end note
+
+@enduml
+
+
+
+
+
+@startuml
+
+interface LibraryOperations {
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class User implements LibraryOperations {
+  -username: String
+  -password: String
+  +User(username: String, password: String)
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class LibrarySystem {
+  -users: List<User>
+  -books: List<Book>
+  -database: Database
+  +LibrarySystem(database: Database)
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+class Book {
+  -title: String
+  -author: String
+  -category: String
+  -status: String
+  +Book(title: String, author: String, category: String)
+}
+
+class Database {
+  -userTable: List<User>
+  -bookTable: List<Book>
+  +Database()
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+class MainApp {
+  +main(): void
+}
+
+note right of MainApp
+  This class contains the main method.
+end note
+
+@enduml
+
+
+
+
+
+@startuml
+
+interface LibraryOperations {
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class User {
+  -username: String
+  -password: String
+  +User(username: String, password: String)
+  +searchBook(title: String): Book
+  +borrowBook(book: Book): boolean
+  +returnBook(book: Book): boolean
+}
+
+class LibrarySystem implements LibraryOperations {
+  -users: List<User>
+  -books: List<Book>
+  -database: Database
+  +LibrarySystem(database: Database)
+  +login(username: String, password: String): boolean
+  +findBook(title: String): Book
+  +checkOutBook(user: User, book: Book): boolean
+  +returnBook(user: User, book: Book): boolean
+  +addUser(user: User): void
+  +addBook(book: Book): void
+}
+
+class Book {
+  -title: String
+  -author: String
+  -category: String
+  -status: String
+  +Book(title: String, author: String, category: String)
+}
+
+class Database {
+  -userTable: List<User>
+  -bookTable: List<Book>
+  +Database()
+  +retrieveUser(username: String): User
+  +retrieveBook(title: String): Book
+  +updateBookStatus(book: Book, status: String): void
+}
+
+class MainApp {
+  +main(): void
+}
+
+note right of MainApp
+  This class contains the main method.
+end note
+
+LibraryOperations <|.. User
+LibraryOperations <|.. LibrarySystem
+
+@enduml

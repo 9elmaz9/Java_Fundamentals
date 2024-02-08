@@ -1,0 +1,63 @@
+@startuml
+left to right direction
+package "Library System" {
+package "User" {
+class User {
+- username: String
+- password: String
++ login(username: String, password: String): boolean
++ searchBook(title: String): Book
++ borrowBook(book: Book): boolean
++ returnBook(book: Book): boolean
++ subscribe(): boolean
+}
+}
+package "CustomerService" {
+class CustomerService {
++ login(username: String, password: String): boolean
++ editBookInformation(book: Book): boolean
++ addBook(book: Book): boolean
++ deleteBook(book: Book): boolean
+}
+}
+package "LibraryService" {
+class LibraryService {
++ login(username: String, password: String): boolean
++ manageBook(book: Book): boolean
++ manageUser(user: User): boolean
++ registerUser(user: User): boolean
+}
+}
+class Book {
+- title: String
+- author: String
+- availability: boolean
++ getTitle(): String
++ getAuthor(): String
++ isAvailable(): boolean
++ setAvailable(availability: boolean): void
+}
+class SystemService {
++ login(username: String, password: String): boolean
++ manageBook(book: Book): boolean
++ manageUser(user: User): boolean
++ registerUser(user: User): boolean
+}
+class MainApp {
++ main(args: String[]): void
+}
+User --> SystemService: "login"
+CustomerService --> SystemService: "login"
+LibraryService --> SystemService: "login"
+CustomerService --> Book: "editBookInformation"
+CustomerService --> Book: "addBook"
+CustomerService --> Book: "deleteBook"
+LibraryService --> Book: "manageBook"
+LibraryService --> User: "manageUser"
+LibraryService --> User: "registerUser"
+MainApp --> User: "searchBook"
+MainApp --> User: "borrowBook"
+MainApp --> User: "returnBook"
+MainApp --> User: "subscribe"
+}
+@enduml
