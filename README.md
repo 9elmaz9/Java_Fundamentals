@@ -42,7 +42,7 @@ This course is designed for beginners, so no prior programming experience is req
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/JavaFundamentalsCourse.git
+    git clone [https://github.com/yourusername/JavaFundamentals.git](https://github.com/9elmaz9/Java_Fundamentals)
     ```
 
 2. **Navigate to the repository:**
