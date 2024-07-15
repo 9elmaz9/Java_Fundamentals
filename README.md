@@ -1,4 +1,5 @@
 # Java Fundamentals Course
+![Project Screenshot](https://storage.googleapis.com/coddy-15505.appspot.com/courses/java_fundamentals/feature)
 
 Welcome to the Java Fundamentals Course! This repository contains a comprehensive educational course designed to teach you the fundamentals of Java programming. Whether you're a complete beginner or looking to brush up on your skills, this course provides all the necessary resources and exercises to help you become proficient in Java.
 
